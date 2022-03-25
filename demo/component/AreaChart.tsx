@@ -4,6 +4,7 @@ import { changeNumberOfData } from './utils';
 import { AreaChart, Area, XAxis, YAxis, Tooltip, CartesianGrid, Legend,
   ReferenceArea, ReferenceLine, ReferenceDot,
   LabelList, Label } from 'recharts';
+import { curveBumpX } from 'd3-shape';
 
 const data = [
   { name: 'Page A', uv: 4000, pv: 2400, amt: 2400, time: 1 },
@@ -133,7 +134,7 @@ export default class AreaChartDemo extends React.Component<any, any> {
             <Tooltip />
             <Area
               stackId="0"
-              type="monotone"
+              type={ curveBumpX }
               dataKey="uv"
               stroke="#ff7300"
               fill="#ff7300"
@@ -145,7 +146,7 @@ export default class AreaChartDemo extends React.Component<any, any> {
             </Area>
             <Area
               stackId="0"
-              type="monotone"
+              type={ curveBumpX }
               dataKey="amt"
               stroke="#82ca9d"
               fill="#82ca9d"
@@ -155,7 +156,7 @@ export default class AreaChartDemo extends React.Component<any, any> {
             />
             <Area
               stackId="0"
-              type="monotone"
+              type={ curveBumpX }
               dataKey="pv"
               stroke="#387908"
               fill="#387908"
